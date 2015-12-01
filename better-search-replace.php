@@ -35,6 +35,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+ 
+ /** 	Allow Plugin to run even though DISALLOW_FILE_MODS is set to True
+ ****************************************/
+ 
+function bsr_custom_capability() {
+	return 'manage_options';
+}
+add_filter( 'bsr_capability', 'bsr_custom_capability' );
+
+
 
 // If this file was called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
